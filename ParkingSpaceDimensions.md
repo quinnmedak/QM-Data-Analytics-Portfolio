@@ -6,5 +6,19 @@ This data set contains 429 vehicles, theoretically depicting all cars used by re
 
 ## Outlier Threshold: Determining Common Length and Width
 ```{r}
-testing
+library(tidyverse)
+library(openintro)
+library(knitr)
+library(ggplot2)
+library(statsr)
+library(broom)
+cars <- as.data.frame(read.csv('cars04.csv'))
+```
+```{r}
+glimpse(cars04)
+```
+cars |> summarise(
+q1 = quantile(width, 0.25, na.rm = TRUE), q3 = quantile(width, 0.75, na.rm = TRUE), iqr = q3 - q1
+)
+width = (iqr*1.5 + Q3)
 ```markdown
