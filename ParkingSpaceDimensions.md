@@ -24,11 +24,13 @@ Firstly, I use a dot plot and a box plot to visualize the data and pinpoint any 
 ```{r}
 ggplot(data = cars, aes(x = width)) + geom_dotplot(dotsize = 0.4)
 ```
+#### Figure 1
 <img width="789" alt="image" src="https://github.com/user-attachments/assets/7a0ee258-5a1b-4bf6-9cda-ca59c4238045" />
 
 ```{r}
 ggplot(data = cars, aes(x = width)) + geom_boxplot()
 ```
+#### Figure 2
 <img width="804" alt="image" src="https://github.com/user-attachments/assets/82f2da19-05fa-4917-a3c7-5793a05eff8e" />
 
 These visualizations raise concern of a few outlying vehicles whose widths' skew the data. Therefore, I use the following computations to find the quartiles for this variable and an IQR value which discounts outliers. 
@@ -46,11 +48,13 @@ Again, I use a dot plot and a box plot to visualize the data and pinpoint any ou
 ```{r}
 ggplot(data = cars, aes(x = length)) + geom_dotplot(dotsize = 0.4)
 ```
+#### Figure 3
 <img width="891" alt="image" src="https://github.com/user-attachments/assets/114af267-e352-4ade-a7e7-cad55559c5de" />
 
 ```{r}
 ggplot(data = cars, aes(x = width)) + geom_boxplot()
 ```
+#### Figure 4
 <img width="901" alt="image" src="https://github.com/user-attachments/assets/95a6af54-b97c-48fa-8995-77185e487407" />
 
 The same concerns with the width variable arose for the length variable, so I calculated descriptive statistics in a similar fashion. 
