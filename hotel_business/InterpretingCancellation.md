@@ -54,3 +54,13 @@ ggplot(hotel, aes(x=avg_daily_rate, y=qualitative_canceled))+ geom_boxplot()
 
 This visualization leads me to believe from initial observation that no association exists between the two variables because so much overlap exists in daily rates. 
 
+## Is there an association between nights stayed and cancelation?
+The business may look to nights booked to find a reason for their high cancelation rate. To visualize this, I summed two variables to find total nights booked per booker and then plotted side-by-side box plots,
+```{r}
+hotel$total_nights <- hotel$stays_in_week_nights + hotel$stays_in_weekend_nights
+ggplot(data = hotel, aes(x = total_nights, y = categorical_canceled)) + 
+  geom_boxplot()
+```
+<img width="926" alt="image" src="https://github.com/user-attachments/assets/387d88a3-6d78-4f29-ab30-c75a1e2e01c5" />
+
+This visualization demonstrated that the variables are not associated, so the company should avoid making any marketing changes related to length of stay.
